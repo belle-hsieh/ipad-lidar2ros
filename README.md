@@ -92,3 +92,9 @@ See [`LICENSE`](./LICENSE).
 
 Some 3rd party code is used & distributed under the MIT license.
 See [`LICENSE.3RD-PARTY`](./LICENSE.3RD-PARTY).
+
+## Updates
+
+- Make sure to provide the path to Info.plist under Build Settings
+- Remove Info.plist from Build Phases -> Copy Bundle resources
+- Under Build Settings -> Swift Compiler - General -> Objective-C Bridging Header, make sure to provide the correct path to SceneDepthPointCloud-Bridging-Header.h

@@ -21,7 +21,7 @@ do_convert()
     # Delete if it exists
     rm -f ${filepath}
     # Generate using '[0]' to get a flattened output
-    convert "${appicon_source_file}[0]" -resize "${size}x${size}" ${filepath}
+    magick "${appicon_source_file}[0]" -resize "${size}x${size}" ${filepath}
 }
 
 # Formats/sizes are taken from the appicon page in the Xcode project
@@ -62,10 +62,10 @@ filename_appicon="appicon.png"
 appicon_rounded_size_geometry="${appicon_rounded_size}x${appicon_rounded_size}"
 
 # Convert mask to PNG
-convert "${appicon_shape_mask_source_file}[0]" -resize ${appicon_rounded_size_geometry} ${filename_mask}
+magick "${appicon_shape_mask_source_file}[0]" -resize ${appicon_rounded_size_geometry} ${filename_mask}
 # Generate appicon PNG
-convert "${appicon_source_file}[0]" -resize ${appicon_rounded_size_geometry} ${filename_appicon}
+magick "${appicon_source_file}[0]" -resize ${appicon_rounded_size_geometry} ${filename_appicon}
 # Apply mask
-convert ${filename_appicon} -alpha on \( +clone -channel a -fx 0 \) +swap ${filename_mask} -composite ${appicon_rounded_file}
+magick ${filename_appicon} -alpha on \( +clone -channel a -fx 0 \) +swap ${filename_mask} -composite ${appicon_rounded_file}
 # Cleanup
 rm -f ${filename_mask} ${filename_appicon}

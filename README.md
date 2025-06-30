@@ -93,7 +93,7 @@ See [`LICENSE`](./LICENSE).
 Some 3rd party code is used & distributed under the MIT license.
 See [`LICENSE.3RD-PARTY`](./LICENSE.3RD-PARTY).
 
-## Updates
+## Notes/Extra Tips
 
 - Make sure to provide the path to Info.plist under Build Settings
 - Remove Info.plist from Build Phases -> Copy Bundle resources
